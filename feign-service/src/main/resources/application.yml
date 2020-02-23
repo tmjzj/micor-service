@@ -1,0 +1,21 @@
+
+server:
+  port: 8701
+spring:
+  application:
+    name: feign-service
+eureka:
+  client:
+      register-with-eureka: true
+      fetch-registry: true
+      service-url:
+          defaultZone: http://admin:123456@localhost:8761/eureka/
+logging:
+  level:
+    com.micorservice.feign.service.UserService: debug
+feign:
+  hystrix:
+    enabled: true   #开启feign中的hystrix功能
+micorservice-admin:
+  ribbon:
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #修改负载均衡算法

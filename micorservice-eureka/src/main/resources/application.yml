@@ -1,0 +1,19 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: micorservice-euraka
+  security:   #����SpringSecurity��¼�û���������
+    user:
+      name: admin
+      password: 123456
+
+
+eureka:
+  instance:
+    hostname: localhost  #ָ����������
+  client:
+    fetch-registry: false  #ָ���Ƿ�Ҫ��ע�����Ļ�ȡ����ע�����Ĳ���Ҫ������
+    register-with-eureka: false #ָ���Ƿ�Ҫע�ᵽע�����ģ�ע�����Ĳ���Ҫ������
+  server:
+    enable-self-preservation: false #�رձ���ģʽ
